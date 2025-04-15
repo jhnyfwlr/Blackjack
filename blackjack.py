@@ -59,9 +59,12 @@ def main():
 
             if move == 'D':
                 # When the player is doubling down, they can increase their bet: 
-                additionalBet = getBet(min(bet, (money - bet)))
-                bet += additionalBet
-                print('bet increased to [].'.format(bet))
+                if money - bet >= bet:
+                    bet *= 2
+                    print(f'You have doubled down. Your bet is now ${bet}.')
+                else:
+                    print("You don't have enough money to double down.")
+                    continue
                 print('bet:', bet)
 
             if move in ('H', 'D'): 
@@ -89,7 +92,7 @@ def main():
 
                 if getHandValue(dealerHand) > 21:
                     break # The dealer has busted. 
-                input('The game is over.')
+                input("Now it's the dealer's turn.")
                 print('\n\n')
 
 
@@ -111,7 +114,7 @@ def main():
         elif playerValue == dealerValue: 
             print("Push. Bets are returned.")
 
-        input('The game is over.')
+        input('Next game.')
         print('\n\n')
 
 
