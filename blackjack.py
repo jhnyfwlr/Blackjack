@@ -88,7 +88,7 @@ def main():
                 if getHandValue(dealerHand) > 21:
                     break # The dealer has busted. 
                 input('Press Enter to continue...')
-                print('/n/n')
+                print('\n\n')
 
 
         # Show the final hands: 
@@ -110,7 +110,7 @@ def main():
             print("Push. Bets are returned.")
 
         input('Press Enter to continue...')
-        print('/n/n')
+        print('\n\n')
 
 
 def getBet(maxBet): 
