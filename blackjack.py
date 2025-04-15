@@ -10,9 +10,11 @@ backside = 'backside'
 
 def main():
     print('''Blackjack, 
-          
-    Rules: Try to get as close to 21 without going over. 
-        Kings, Queens, and Jacks are worth 10 points. 
+        
+        The rules:
+        
+        Try to get as close to 21 without going over. 
+        Kings, Queens, and Jacks are each worth 10 points. 
         Aces are worth 1 or 11 points. 
         Cards 2 through 10 are worth their face value. 
         (H)it to take another card. 
@@ -20,7 +22,7 @@ def main():
         On your first play, you can (D)double down to increase 
         your bet but must hit exactly one more time before standing. 
         In case of a tie, the bet is returned to the player. 
-        The dealer stops hitting at 12
+        The dealer stops hitting at 17. 
           
           ''')
 
@@ -55,8 +57,8 @@ def main():
             # Get the player's move, either H, S, or D: 
             move = getMove(playerHand, money - bet)
 
-            if move == 'D': 
-                # Player is doubling down, they can increase their bet: 
+            if move == 'D':
+                # When the player is doubling down, they can increase their bet: 
                 additionalBet = getBet(min(bet, (money - bet)))
                 bet += additionalBet
                 print('bet increased to [].'.format(bet))
@@ -87,7 +89,7 @@ def main():
 
                 if getHandValue(dealerHand) > 21:
                     break # The dealer has busted. 
-                input('Press Enter to continue...')
+                input('The game is over.')
                 print('\n\n')
 
 
@@ -109,7 +111,7 @@ def main():
         elif playerValue == dealerValue: 
             print("Push. Bets are returned.")
 
-        input('Press Enter to continue...')
+        input('The game is over.')
         print('\n\n')
 
 
