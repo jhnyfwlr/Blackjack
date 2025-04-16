@@ -19,9 +19,9 @@ def main():
         Cards 2 through 10 are worth their face value. 
         (H)it to take another card. 
         (S)tand to stop taking cards. 
-        On your first play, you can (D)double down to increase 
-        your bet but must hit exactly one more time before standing. 
-        In case of a tie, the bet is returned to the player. 
+        On your first play, you can (D)double down to double your bet,
+        but must hit exactly one more time before standing. 
+        In case of a push, the bet is returned to the player. 
         The dealer stops hitting at 17. 
           
           ''')
@@ -32,7 +32,7 @@ def main():
         if money <= 0: 
             print("You are broke!")
             print("Good thing you weren't playing with real money.")
-            print("Thanks for plalying!")
+            print("Thanks for playing!")
             sys.exit()
 
         # Let the player enter their bet for this round: 
